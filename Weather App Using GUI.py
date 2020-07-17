@@ -1,23 +1,10 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[ ]:
-
-
 from tkinter import *
 from tkinter import messagebox
 import requests
 import json
 from configparser import ConfigParser
 
-
-# In[ ]:
-
-
 url = 'http://api.openweathermap.org/data/2.5/weather?q={}&appid={}'
-
-
-# In[ ]:
 
 
 config_file = 'config.ini'
@@ -25,9 +12,6 @@ config = ConfigParser()
 config.read(config_file)
 api_key = config['api_key']['key']
 print(api_key)
-
-
-# In[ ]:
 
 
 def search_weather(city):
@@ -46,9 +30,6 @@ def search_weather(city):
         return None
 
 
-# In[ ]:
-
-
 def search():
     city = c_txt.get()
     weather = search_weather(city)
@@ -61,9 +42,6 @@ def search():
     loc_lbl.pack(pady = 10)
     temp_lbl.pack(pady = 10)
     w_lbl.pack(pady = 10)
-
-
-# In[ ]:
 
 
 root=Tk()
@@ -91,16 +69,4 @@ w_lbl = Label(root,text = 'Weather',font = 'bold')
 
 
 root.mainloop()
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
 
